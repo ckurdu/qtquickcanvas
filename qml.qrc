@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>scripts/ether.js</file>
+        <file>scripts/mainfuncs.js</file>
+        <file>scripts/simplex-noise.js</file>
+        <file>SGlobal.qml</file>
+    </qresource>
+</RCC>
