@@ -8,9 +8,9 @@ Item {
     id:root
     property bool aniInited : false;
 
-    function initAnim(a,b)
+    function initAnim(a,b,bg,bga)
     {
-        Ether.setup(a,b);
+        Ether.setup(a,b,bg,bga);
         aniInited = true;
     }
 

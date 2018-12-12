@@ -41,8 +41,12 @@ let speeds;
 let lifeSpans;
 let sizes;
 let hues;
+let bg;
+let bga;
 
-function setup(a,b) {
+function setup(a,b,p_bg,p_bga) {
+    bg = p_bg;
+    bga = p_bga
     tick = 0;
     center = [];
     createCanvas(a,b);
@@ -159,37 +163,26 @@ function createCanvas(aItem,bItem) {
 }
 
 function resize() {
-    /*
-    const { innerWidth, innerHeight } = window;
-
-    canvas.a.width = innerWidth;
-  canvas.a.height = innerHeight;
-
-  ctx.a.drawImage(canvas.b, 0, 0);
-
-    canvas.b.width = innerWidth;
-  canvas.b.height = innerHeight;
-
-  ctx.b.drawImage(canvas.a, 0, 0);
-
-  */
-  center[0] = 0.5 * canvas.a.width;
+  center[0] = 0.1 * canvas.a.width;
   center[1] = 0.5 * canvas.a.height;
 }
 
 function draw() {
     tick++;
     ctx.a.clearRect(0,0,canvas.a.width,canvas.a.height);
+    ctx.b.drawImage(bga,0,0);
 
     ctx.b.fillStyle = 'rgba(0,0,0,0.1)';
     ctx.b.fillRect(0,0,canvas.b.width,canvas.b.height);
+    //ctx.b.fillStyle = 'rgba(0,0,1)';
+    ctx.b.drawImage(bga,0,0);
+    //ctx.b.fillStyle = 'rgba(0,0,0.1)';
 
     let i;
 
     for (i = 0; i < particleCount * 2; i += 2) {
         drawParticle(i);
     }
-
     ctx.b.save();
     ctx.b.filter = 'blur(8px)';
     ctx.b.globalCompositeOperation = 'lighten';

@@ -5,5 +5,8 @@
         <file>scripts/mainfuncs.js</file>
         <file>scripts/simplex-noise.js</file>
         <file>SGlobal.qml</file>
+        <file>imagesources/background.svg</file>
+        <file>imagesources/background.png</file>
+        <file>imagesources/background_alpha.png</file>
     </qresource>
 </RCC>
